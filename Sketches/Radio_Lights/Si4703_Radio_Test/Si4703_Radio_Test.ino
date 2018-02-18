@@ -1,10 +1,12 @@
 #include <Wire.h>
 #include <Si4703_Breakout.h>
 
+// Pins for radio receiver initialization
 int resetPin = 2;
 int SDIO = A4;
 int SCLK = A5;
 
+// Initialize radio and variables
 Si4703_Breakout radio(resetPin, SDIO, SCLK);
 int channel;
 int volume;
@@ -13,7 +15,7 @@ char rdsBuffer[10];
 void setup()
 {
   Serial.begin(9600);
-  Serial.println("\n\nSi4703_Breakout Test Sketch");
+  Serial.println("\n\n     Breakout Test Sketch");
   Serial.println("===========================");  
   Serial.println("a b     Favourite stations");
   Serial.println("+ -     Volume (max 15)");
@@ -22,7 +24,7 @@ void setup()
   Serial.println("Send me a command letter.");
   
   radio.powerOn();
-  Serial.println("Radio is powered on");
+  Serial.println("Radio is powered on.");
   radio.setVolume(0);
 }
 
