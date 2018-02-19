@@ -143,6 +143,8 @@ void Read_Frequencies(){
     delay (50);
   }
   digitalWrite(teller, HIGH);
+  Serial.println("teller reading HIGH");
   delay (50);
   digitalWrite(teller, LOW);
+  Serial.println("teller reading LOW");
 }
