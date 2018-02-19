@@ -16,6 +16,9 @@ char rdsBuffer[10];
 #define DC_One A0
 #define DC_Two A1 
 
+//Declare output pins
+int teller = 9;
+
 
 //Define spectrum variables
 int freq_amp;
@@ -139,5 +142,7 @@ void Read_Frequencies(){
     digitalWrite(STROBE, LOW);
     delay (50);
   }
-  
+  digitalWrite(teller, HIGH);
+  delay (50);
+  digitalWrite(teller, LOW);
 }
